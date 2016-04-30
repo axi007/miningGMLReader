@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="580.0" maxWidth="500.0" minHeight="580.0" minWidth="500.0" prefHeight="580.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gml.reader.view.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+                  <MenuItem fx:id="openDataMenuItem" mnemonicParsing="false" text="Otwórz Dane" />
+              <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Zamknij" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="O programie" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="81.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="418.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="activeFileLabel" prefHeight="17.0" prefWidth="104.0" text="Aktywny plik:" />
+            <Label fx:id="fileNameLabel" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin></Label>
+         </children>
+         <BorderPane.margin>
+            <Insets left="1.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </bottom>
+   <center>
+      <SplitPane dividerPositions="0.05451127819548872" orientation="VERTICAL">
+        <items>
+          <AnchorPane>
+               <children>
+                  <ToggleButton fx:id="showParametersButton" layoutX="181.0" layoutY="1.0" mnemonicParsing="false" text="ATRYBUTY" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="181.0" />
+                  <Button fx:id="parseButton" layoutX="3.0" layoutY="1.0" mnemonicParsing="false" text="PARSOWANIE" AnchorPane.leftAnchor="3.0" />
+                  <Button fx:id="drawButton" layoutX="96.0" layoutY="1.0" minHeight="25.0" minWidth="76.0" mnemonicParsing="false" onAction="#draw" text="RYSOWANIE" AnchorPane.leftAnchor="96.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="anchor" maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" SplitPane.resizableWithParent="false" />
+        </items>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </SplitPane>
+   </center>
+</BorderPane>
